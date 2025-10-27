@@ -2,9 +2,16 @@ using UnityEngine;
 
 public class GameManagerScript : MonoBehaviour
 {
+    public enum state
+    {
+        GAMEPLAY,
+        PAUSE
+    }
+
     public state gameState = state.GAMEPLAY;
 
     bool stateChangeFrame = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,8 +53,3 @@ public class GameManagerScript : MonoBehaviour
     }
 }
 
-public enum state
-        {
-            GAMEPLAY,
-            PAUSE
-        }
