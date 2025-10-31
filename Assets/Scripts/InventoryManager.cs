@@ -26,6 +26,15 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        CollectableScript collisionItem = hit.gameObject.GetComponent<CollectableScript>();
+        if (collisionItem != null) 
+        {
+            AddItem(collisionItem.itemName);
+            Destroy(collisionItem.gameObject);
+        }
+    }
     public void AddItem(string itemName)
     {
         items.Add(itemName);
